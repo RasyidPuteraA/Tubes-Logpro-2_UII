@@ -1,32 +1,37 @@
-import pandas as pd
-import numpy as np
-import quick_sort
-import partition
+def bubble_sort(data):
+    # Menentukan panjang data
+    n = len(data)
 
-# Load the data set from a CSV file
-df = pd.read_csv('tourism_with_id.csv')
+    # Loop sebanyak jumlah elemen data dikurangi satu kali
+    for i in range(n-1):
+        # Membuat flag untuk menandakan apakah ada elemen yang berpindah posisi atau tidak
+        swapped = False
 
-# Convert the Pandas DataFrame to a NumPy array
-data = df.to_numpy()
+        # Loop untuk membandingkan setiap pasangan elemen data
+        for j in range(n-i-1):
+            # Menukar posisi elemen jika diperlukan
+            if data[j]['Total Biaya'] > data[j+1]['Total Biaya']:
+                data[j], data[j+1] = data[j+1], data[j]
+                swapped = True
+            # Jika total biaya sama, maka bandingkan kota
+            elif data[j]['Total Biaya'] == data[j+1]['Total Biaya'] and data[j]['City'] > data[j+1]['City']:
+                data[j], data[j+1] = data[j+1], data[j]
+                swapped = True
+        
+        # Jika tidak ada elemen yang berpindah posisi, berarti data sudah terurut dengan tepat
+        # dan proses sorting dapat dihentikan
+        if not swapped:
+            break
 
-# Sort the data set using quick sort
-quick_sort.quick_sort(data, 0, len(data)-1)
+# Contoh penggunaan
+data = [
+    {'Place_Name': 'Pulau Pelangi', 'City': 'Jakarta', 'Price': 900000, 'Tiket': 0, 'Total Biaya': 900000, 'Maskapai': 'None'},
+    {'Place_Name': 'Monumen Batik Yogyakarta', 'City': 'Yogyakarta', 'Price': 40000, 'Tiket': 1200000, 'Total Biaya': 1240000, 'Maskapai': 'Garuda'},
+    {'Place_Name': 'Trans Studio Bandung', 'City': 'Bandung', 'Price': 280000, 'Tiket': 1800000, 'Total Biaya': 2080000, 'Maskapai': 'Lion Air'},
+    {'Place_Name': 'Ciputra Waterpark', 'City': 'Surabaya', 'Price': 95000, 'Tiket': 1200000, 'Total Biaya': 1295000, 'Maskapai': 'Lion Air'},
+    {'Place_Name': 'Safari & Marine Park', 'City': 'Bali', 'Price': 600000, 'Tiket': 1800000, 'Total Biaya': 2400000, 'Maskapai': 'Garuda'}
+]
 
-# Create a Pandas DataFrame from the sorted data set
-df_sorted = pd.DataFrame(data, columns=['city1', 'city2', 'price', 'distance'])
+bubble_sort(data)
 
-# Print the first five rows of the sorted data set
-print(df_sorted.head(5))
-
-# Calculate the mean, median, and standard deviation of the "price" column
-mean = df_sorted['price'].mean()
-median = df_sorted['price'].median()
-std = df_sorted['price'].std()
-
-# Print the statistical summary
-print(f'Mean: {mean:.2f}')
-print(f'Median: {median:.2f}')
-print(f'Standard deviation: {std:.2f}')
-
-# Save the sorted data set to a CSV file
-df_sorted.to_csv('sorted_data.csv', index=False)
+print([item['City'] for item in data])
