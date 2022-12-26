@@ -1,13 +1,50 @@
 import bubble_sort
-# Contoh penggunaan
-data = [
-    {'Place_Name': 'Pulau Pelangi', 'City': 'Jakarta', 'Price': 900000, 'Tiket': 0, 'Total Biaya': 900000, 'Maskapai': 'None'},
-    {'Place_Name': 'Monumen Batik Yogyakarta', 'City': 'Yogyakarta', 'Price': 40000, 'Tiket': 1200000, 'Total Biaya': 1240000, 'Maskapai': 'Garuda'},
-    {'Place_Name': 'Trans Studio Bandung', 'City': 'Bandung', 'Price': 280000, 'Tiket': 1800000, 'Total Biaya': 2080000, 'Maskapai': 'Lion Air'},
-    {'Place_Name': 'Ciputra Waterpark', 'City': 'Surabaya', 'Price': 95000, 'Tiket': 1200000, 'Total Biaya': 1295000, 'Maskapai': 'Lion Air'},
-    {'Place_Name': 'Safari & Marine Park', 'City': 'Bali', 'Price': 600000, 'Tiket': 1800000, 'Total Biaya': 2400000, 'Maskapai': 'Garuda'}
-]
+import welcome
+import tabel
+import tiket
+import positioning
+import update_totalbiaya
+import rekomendasi 
+from data import data
+ 
+ 
+welcome.welcome()
+
+nama = input('NAMA : ')
+nim = int(input('NIM : '))
+keberangkatan = input('Masukkan kota keberangkatan: ')
+
+keberangkatan = tiket.tiket(keberangkatan, data)
+
+print('\nBerikut data yang di dapat pada Raw Data Sheet Traveloka \nperjalanan dan biaya selama melakukan aktifitas di 5 kota\n\n')
+
+a = nim % 10
+b = round(a / 2)
+
+bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+
+print(f"Tanggal keberangkatan: {a} {bulan[b-1]} 2023\n\n")
+
+
+
+
+positioning.position(data, keberangkatan)
+
+update_totalbiaya.biaya(data)
+
+tabel.tabel(data)
 
 bubble_sort.bubble_sort(data)
 
-print([item['City'] for item in data])
+
+print('\nBerikut Merupakan Urutan yang didapat setelah melakukan Algoritma Bubble Sort : ')
+print([item['City'] for item in data], '\n')
+
+print(f"Tanggal keberangkatan: {a} {bulan[b-1]} 2023\n\n")
+
+tabel.tabel(data)
+
+rekomendasi.rekomendasi(keberangkatan, data)
+
+
+
