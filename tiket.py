@@ -7,12 +7,12 @@ def tiket(city, data):
       for item in data:
         if item['City'] == city:
               print(f'Tiket keberangkatan dari {city}\n\n')
-              return
+              return city
       else:
-        # Jika tidak ditemukan harga tiket, maka akan mengalami error
-        raise ValueError(f'Tidak ditemukan harga tiket untuk keberangkatan dari {city}\n')
+        city = input('Masukkan kota keberangkatan yang sesuai: ')
+        return city
+        break 
     except ValueError as e:
       # Menangani error dengan memberikan instruksi kepada pengguna untuk memasukkan input kembali
-      print(e)
-      city = input('Masukkan kota keberangkatan yang sesuai: ')
-      return city 
+      print(f'Tidak ditemukan harga tiket untuk keberangkatan dari {city}\n')
+      

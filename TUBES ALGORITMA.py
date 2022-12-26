@@ -23,9 +23,7 @@ b = round(a / 2)
 
 bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
 
-print(f"Tanggal keberangkatan: {a} {bulan[b-1]} 2023\n\n")
-
-
+print(f"Tanggal keberangkatan: {a} {bulan[b-1]} 2023\n")
 
 
 positioning.position(data, keberangkatan)
@@ -34,13 +32,12 @@ update_totalbiaya.biaya(data)
 
 tabel.tabel(data)
 
-bubble_sort.bubble_sort(data)
-
-
 print('\nBerikut Merupakan Urutan yang didapat setelah melakukan Algoritma Bubble Sort : ')
 print([item['City'] for item in data], '\n')
 
-print(f"Tanggal keberangkatan: {a} {bulan[b-1]} 2023\n\n")
+print(f"Tanggal keberangkatan: {a} {bulan[b-1]} 2023\n")
+
+bubble_sort.bubble_sort(data)
 
 tabel.tabel(data)
 
