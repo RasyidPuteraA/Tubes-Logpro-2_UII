@@ -6,4 +6,4 @@ def welcome():
     *                                   *
     *************************************
     """)
-    print('By Muhamamd Rasyid Putera Agung\n\t\t21524002')
+    print('\tBy Muhamamd Rasyid Putera Agung\n\t\t   21524002\n\n')
