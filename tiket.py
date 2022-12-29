@@ -6,7 +6,7 @@ def tiket(city, data):
       # Mencoba menampilkan harga tiket jika ditemukan
       for item in data:
         if item['City'] == city:
-              print(f'Tiket keberangkatan dari {city}\n\n')
+              print(f'Tiket keberangkatan dari {city}\n')
               return city
       else:
         city = input('Masukkan kota keberangkatan yang sesuai: ')

@@ -32,16 +32,16 @@ update_totalbiaya.biaya(data)
 
 tabel.tabel(data)
 
-print('\nBerikut Merupakan Urutan yang didapat setelah melakukan Algoritma Bubble Sort : ')
-print([item['City'] for item in data], '\n')
-
-print(f"Tanggal keberangkatan: {a} {bulan[b-1]} 2023\n")
+print(f"\n\nTanggal keberangkatan: {a} {bulan[b-1]} 2023\n")
 
 bubble_sort.bubble_sort(data)
 
 tabel.tabel(data)
 
 rekomendasi.rekomendasi(keberangkatan, data)
+
+print('\nBerikut Merupakan Urutan yang didapat setelah melakukan Algoritma Bubble Sort : ')
+print([item['City'] for item in data], '\n')
 
 
 
