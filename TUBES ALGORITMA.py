@@ -42,8 +42,8 @@ bubble_sort.bubble_sort(data_maskapai)
 
 tabel.tabel(data_maskapai)
 
-total_jarak = haversine(data,keberangkatan,tujuan)
-rekomendasi.rekomendasi(keberangkatan,tujuan,data_maskapai,total_jarak)
+rekomendasi.rekomendasi(keberangkatan,tujuan,data_maskapai)
+print(f'Jarak antar Kota : {haversine(data,keberangkatan,tujuan)} KM\n')
 
 
 

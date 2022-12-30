@@ -3,10 +3,8 @@ def keberangkatan(city, data):
   # untuk keberangkatan dari kota yang diminta
   while True:
     try:
-      # Mencoba menampilkan harga tiket jika ditemukan
       for item in data:
         if item['City'] == city:
-              print(f'Tiket keberangkatan dari {city}\n')
               return city
       else:
         city = input('Kota Keberangkatan: ')
@@ -24,7 +22,6 @@ def tujuan(city, data):
       # Mencoba menampilkan harga tiket jika ditemukan
       for item in data:
         if item['City'] == city:
-              print(f'Tiket dengan Tujuan {city}\n')
               return city
       else:
         city = input('Kota Tujuan: ')

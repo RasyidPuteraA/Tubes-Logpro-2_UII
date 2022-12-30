@@ -7,4 +7,4 @@ def page():
         print("*", end="")
         time.sleep(0.5)
 
-    print("\n\nTerimakasih Telah menunggu\n\n")
+    print("\n\nTerimakasih Telah menunggu\n")

@@ -22,7 +22,6 @@ def haversine(data, Keberangkatan, Tujuan):
     
     # Menghitung jarak dalam kilometer
     distance = 6371 * c
-    print(distance)
     
     return distance
     
