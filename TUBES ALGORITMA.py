@@ -5,6 +5,7 @@ import tabel
 import tiket
 import update
 import rekomendasi 
+import transit
 from Jarak import haversine
 from data import data
 from data import data_maskapai 
@@ -43,7 +44,13 @@ bubble_sort.bubble_sort(data_maskapai)
 tabel.tabel(data_maskapai)
 
 rekomendasi.rekomendasi(keberangkatan,tujuan,data_maskapai)
-print(f'Jarak antar Kota : {haversine(data,keberangkatan,tujuan)} KM\n')
+
+distance = haversine(data,keberangkatan,tujuan)
+
+print(f'Jarak antar Kota : {distance} KM\n')
+
+transit.transport(distance, data_maskapai)
+
 
 
 

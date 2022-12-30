@@ -16,9 +16,9 @@ data = [
 ]
 
 data_maskapai = [
-{'Maskapai': 'Garuda Indonesia', 'Harga': 1.5 * 10**6},
-{'Maskapai': 'Lion Air', 'Harga': 1.8 * 10**6},
-{'Maskapai': 'Citilink', 'Harga': 1.2 * 10**6},
-{'Maskapai': 'Batik Air', 'Harga': 2.1 * 10**6},
-{'Maskapai': 'Sriwijaya Air', 'Harga': 1.7 * 10**6}
+{'Maskapai': 'Garuda Indonesia', 'Harga': 1.5 * 106, 'Jenis': 'Boeing 737-800', 'Masa': '10 jam', 'Jangkauan': '6.000 km'},
+{'Maskapai': 'Lion Air', 'Harga': 1.8 * 106, 'Jenis': 'Boeing 737-900ER', 'Masa': '8 jam', 'Jangkauan': '7.500 km'},
+{'Maskapai': 'Citilink', 'Harga': 1.2 * 106, 'Jenis': 'Airbus A320', 'Masa': '6 jam', 'Jangkauan': '5.000 km'},
+{'Maskapai': 'Batik Air', 'Harga': 2.1 * 106, 'Jenis': 'Boeing 737-800', 'Masa': '9 jam', 'Jangkauan': '6.000 km'},
+{'Maskapai': 'Sriwijaya Air', 'Harga': 1.7 * 10**6, 'Jenis': 'Boeing 737-800', 'Masa': '7 jam', 'Jangkauan': '5.500 km'}
 ]
