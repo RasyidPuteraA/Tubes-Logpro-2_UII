@@ -10,11 +10,11 @@ def bubble_sort(data):
         # Loop untuk membandingkan setiap pasangan elemen data
         for j in range(n-i-1):
             # Menukar posisi elemen jika diperlukan
-            if data[j]['Total Biaya'] > data[j+1]['Total Biaya']:
+            if data[j]['Harga'] > data[j+1]['Harga']:
                 data[j], data[j+1] = data[j+1], data[j]
                 swapped = True
-            # Jika total biaya sama, maka bandingkan kota
-            elif data[j]['Total Biaya'] == data[j+1]['Total Biaya'] and data[j]['City'] > data[j+1]['City']:
+            # Jika Harga sama, maka bandingkan kota
+            elif data[j]['Harga'] == data[j+1]['Harga'] and data[j]['City'] > data[j+1]['City']:
                 data[j], data[j+1] = data[j+1], data[j]
                 swapped = True
         

@@ -1,47 +1,53 @@
 import bubble_sort
 import welcome
+import Loading
 import tabel
 import tiket
-import positioning
-import update_totalbiaya
+import update
 import rekomendasi 
+from Jarak import haversine
 from data import data
- 
+from data import data_maskapai 
  
 welcome.welcome()
 
 nama = input('NAMA : ')
 nim = int(input('NIM : '))
-keberangkatan = input('Masukkan kota keberangkatan: ')
+keberangkatan = input('Kota Keberangkatan: ')
+tujuan = input('Kota Tujuan :')
 
-keberangkatan = tiket.tiket(keberangkatan, data)
+keberangkatan = tiket.keberangkatan(keberangkatan, data)
+tujuan = tiket.tujuan(tujuan, data)
 
-print('\nBerikut data yang di dapat pada Raw Data Sheet Traveloka \nperjalanan dan biaya selama melakukan aktifitas di 5 kota\n\n')
+print(f'\nBerikut data yang di dapat pada Raw Data Sheet Traveloka \n Untuk melakukan perjalanan dari Kota {keberangkatan} ke Kota {tujuan}\n\n')
 
-a = nim % 10
+a = (nim % 10)
 b = round(a / 2)
 
 bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
 
-print(f"Tanggal keberangkatan: {a} {bulan[b-1]} 2023\n")
+Loading.page()
+
+print(f"\n\nTanggal keberangkatan: {3*a} {bulan[b-1]} 2023\n")
+
+update.harga(data_maskapai)
+
+tabel.tabel(data_maskapai)
+
+Loading.page()
+
+print(f"\n\nTanggal keberangkatan: {3*a} {bulan[b-1]} 2023\n")
+
+bubble_sort.bubble_sort(data_maskapai)
+
+tabel.tabel(data_maskapai)
+
+total_jarak = haversine(data,keberangkatan,tujuan)
+rekomendasi.rekomendasi(keberangkatan,tujuan,data_maskapai,total_jarak)
 
 
-positioning.position(data, keberangkatan)
 
-update_totalbiaya.biaya(data)
 
-tabel.tabel(data)
-
-print(f"\n\nTanggal keberangkatan: {a} {bulan[b-1]} 2023\n")
-
-bubble_sort.bubble_sort(data)
-
-tabel.tabel(data)
-
-rekomendasi.rekomendasi(keberangkatan, data)
-
-print('\nBerikut Merupakan Urutan yang didapat setelah melakukan Algoritma Bubble Sort : ')
-print([item['City'] for item in data], '\n')
 
 
 
