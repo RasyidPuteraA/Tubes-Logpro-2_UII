@@ -47,7 +47,7 @@ rekomendasi.rekomendasi(keberangkatan,tujuan,data_maskapai)
 
 distance = haversine(data,keberangkatan,tujuan)
 
-print(f'Jarak antar Kota : {distance} KM\n')
+print(f'Jarak antar Kota : {distance} KM')
 
 transit.transport(distance, data_maskapai)
 
